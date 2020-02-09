@@ -1,0 +1,6 @@
+jsonstr = [{
+"Temperature":70.0,
+"AirPressure":80.1,
+"LightReplacement":"Yes",
+"Grocery":"Yes"
+}];

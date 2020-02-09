@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>FOODACKER</title>
+  <title>HOME MANAGEMENT</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -147,12 +147,15 @@ function addedPrice(res)
 {
 console.log("price",res);
 }
-
+function myFunction() {
+  alert("Item Available!");
+}
 function callReq() {
    console.log("jiii");
    console.log("jsonstr.LightReplacement",jsonstr[0].LightReplacement);
    if(jsonstr[0].LightReplacement === "Yes")
 		avail("122121","1");
+	
    //sleep(1000);
 
     //sleep(1000);
@@ -161,6 +164,7 @@ function callReq() {
 	console.log("chkItem",chkItem);
   if(chkItem || chkItem === "true")
   {
+	//alert("hi");
    console.log("jiii");
     console.log("jiii");
   var output;
@@ -216,13 +220,13 @@ function callReq() {
     <div class="container text-center">
       <div class="row">
         <div class="col-md-12">
-          <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="img/logo.png"></a>
+          <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="img/f.png" height="70"></a>
         </div>
       </div>
 
       <div class="col-md-12">
         <h1>
-            A CHECK ON EVERYDAY GROCERY!
+            A CHECK ON EVERYDAY HOUSEHOLD!
           </h1>
 
         <!-- <p class="tagline">
@@ -240,7 +244,7 @@ function callReq() {
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="img/logo-nav.png" alt="" title="" /></img></a>
+        <a href="index.html"><img src="img/f.png" alt="" title="" /></img></a>
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Bell</a></h1>-->
       </div>
@@ -300,8 +304,8 @@ function callReq() {
 
         var data = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['Temperature', 60],
-          ['Humidity', 55],
+          ['Temperature', jsonstr[0].Temperature],
+          ['Humidity', jsonstr[0].AirPressure],
           
         ]);
 
@@ -318,14 +322,7 @@ function callReq() {
 
         chart.draw(data, options);
 
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
+        
         
       }
     </script>
@@ -399,46 +396,7 @@ function callReq() {
           ORDERS FROM TODAY
         </h2>
 
-      <div class="row">
-        <div class="col-sm-3 col-xs-6">
-          <div class="card card-block">
-            <a href="#"><!-- <img alt="" class="team-img" src="img/team-1.jpg"> -->
-              <div class="card-title-wrap">
-                <span class="card-title">Milk</span> 
-              </div>
-			 <!--  </div>
-			  </div> -->
-			     
-              <!-- <div class="team-over">
-                <h4 class="hidden-md-down">
-                  Connect with me
-                </h4>
 
-                <nav class="social-nav">
-                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
-            </nav>
-
-            <p>
-              Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
-            </p>
-          </div> -->
-          </a>
-        </div>
-      </div>
-<div class="container">
-<div class="row">
-      <div class="col-sm-3 col-xs-6">
-        <div class="card card-block">
-          <a href="#"><!-- <img alt="" class="team-img" src="img/team-2.jpg"> -->
-              <div class="card-title-wrap">
-                <span class="card-title">Salt</span> 
-              </div>
-
-        </a>
-      </div>
-    </div>
-	</div>
-	</div>
 <div class="container">
 <div class="row">
     <div class="col-sm-3 col-xs-6">
@@ -453,8 +411,11 @@ function callReq() {
     </div>
     </div> </div>
     </div>
+	<input id="sdMsg" type="button" value="Available ? " onclick="myFunction();" />
 	<input id="sdMsg" type="button" value="Order Here!" onclick="callReq();" />
 	
+
+
 	
 
 
@@ -471,7 +432,7 @@ function callReq() {
       <div class="row">
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-1.jpg" height="195">
+            <a href="#line"><img alt="" src="img/porf-1.jpg" height="195">
               <div class="portfolio-over">
                 <div>
                   <h3 class="card-title">
@@ -484,35 +445,9 @@ function callReq() {
           </div>
         </div>
 
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-2.jpg" height="195">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    Households Check
-                  </h3>
+     
 
-                
-                </div>
-              </div></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-sm-6 col-xs-12">
-          <div class="card card-block">
-            <a href="#"><img alt="" src="img/porf-3.jpg" height="195">
-              <div class="portfolio-over">
-                <div>
-                  <h3 class="card-title">
-                    Yearly Expenses
-                  </h3>
-
-                 
-                </div>
-              </div></a>
-          </div>
-        </div>
+     
 
         <div class="col-lg-3 col-sm-6 col-xs-12">
           <div class="card card-block">
@@ -590,7 +525,89 @@ function drawChart() {
 
       </div>
     </div>
-  </section>
+	
+  <section id="line">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Daily Orders</h2>
+        </div>
+      </div>
+	  <div class="row justify-content-center">
+<div id="piechart_3d"></div>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['sugar',     3],
+          ['milk',      2],
+          
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+      
+        
+
+        
+
+      </div>
+    </div>
+	
+  <section id="bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title"></h2>
+        </div>
+      </div>
+	  <div class="row justify-content-center">
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Work', 9],
+  ['Eat', 2],
+  ['TV', 4],
+  ['Gym', 2],
+  ['Sleep', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+      
+        
+
+        
+
+      </div>
+    </div>
   
   
   
