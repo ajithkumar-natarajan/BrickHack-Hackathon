@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <title>FOODACKER</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+
+  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <script>
+  function chkavl(res){
+console.log('insida');
+    console.log(res.isAvailable) 
+	}
+
+function avail(sku,store)
+{
+	var url ='https://api.wegmans.io/products/'+sku+'/availabilities/'+store+''&api-version=2018-10-18&subscription-key=d5e282efface443ebf847c99ad497ca7';
+	console.log(url);
+   const options = {
+          method: 'GET',
+                }
+                fetch(url, options)
+          .then(data => data.json())
+          .then(success => chkavl(success));
+	
+	
+	return false;
+}
+function acceptResults(res){
+    console.log(res.results[1].sku)
+   // var i = 0;
+    for(var i = 0; i < res.results.length; i++)
+    {
+        var objJson = res.results[i].sku;
+       
+        var objName = res.results[i].name;
+        console.log(objName);
+     //for(i = 0; i < objJson.length; i++)
+     //console.log(objJson);
+     }//document.write(objJson[1]);
+       ///document.write(obj);
+   
+           
+         
+     }
+   
+     
+     //   }
+function callReq() {
+   console.log("jiii");
+  
+		  
+}
+
+
+//console.log(getRes.results)
+</script>
+
+</head>
+
+<body>
+<script>
+function chkavl(res){
+console.log('insida');
+    console.log(res.isAvailable) 
+	}
+function avail(sku,store)
+{
+	var url ='https://api.wegmans.io/products/'+sku+'/availabilities/'+store+'?api-version=2018-10-18&subscription-key=d5e282efface443ebf847c99ad497ca7';
+	console.log(url);
+   const options = {
+          method: 'GET',
+                }
+				
+                fetch(url, options)
+          .then(data => data.json())
+          .then(success => chkavl(success));
+	
+	
+	//return false;
+}
+
+
+
+
+
+
+
+function callReq() {
+   console.log("jiii");
+  avail("122121","1");
+		  
+}
+
+
+//console.log(getRes.results)
+</script>
+  <!-- Page Content
+    ================================================== -->
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="hero-brand" href="index.html" title="Home"><img alt="Bell Logo" src="img/logo.png"></a>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <h1>
+            A CHECK ON EVERYDAY GROCERY!
+          </h1>
+
+        <!-- <p class="tagline">
+          This is a powerful theme with some great features that you can use in your future projects.
+        </p> -->
+        <a class="btn btn-full" href="#about" >START</a>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Hero -->
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="index.html"><img src="img/logo-nav.png" alt="" title="" /></img></a>
+        <!-- Uncomment below if you prefer to use a text image -->
+        <!--<h1><a href="#hero">Bell</a></h1>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+		<li><a href="#gauge">From Home</a></li>
+          <li><a href="#about">Statistics</a></li>
+          <li><a href="#team">Orders</a></li>
+          
+          <li><a href="#portfolio">Charts</a></li>
+          <!-- <li class="menu-has-children"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="menu-has-children"><a href="#">Drop Down 2</a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+              <li><a href="#">Drop Down 5</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact Us</a></li> -->
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+
+      <nav class="nav social-nav pull-right d-none d-lg-inline">
+        <a href="https://twitter.com/wegmans"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com/Wegmans/"><i class="fa fa-facebook"></i></a> <a href="https://www.linkedin.com/company/wegmans-food-markets/"><i class="fa fa-linkedin"></i></a> <a href="https://www.wegmans.com/service/contact-us/"><i class="fa fa-envelope"></i></a>
+      </nav>
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!-- About -->
+   <section id="gauge">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">From Home</h2>
+        </div>
+      </div>
+	  <div class="row justify-content-center">
+<div id="chart_div"></div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Temperature', 60],
+          ['Humidity', 55],
+          
+        ]);
+
+        var options = {
+          width: 350, height: 120,
+         // redFrom: 35, redTo: 65,
+		  min: 35 , max: 95 ,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+		
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        
+      }
+    </script>
+	
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about" id="about">
+    <div class="container text-center">
+      <h2>
+          Statistics
+        </h2>
+
+     <!--  <p>
+        Voluptua scripserit per ad, laudem viderer sit ex. Ex alia corrumpit voluptatibus usu, sed unum convenire id. Ut cum nisl moderatius, per nihil dicant commodo an. Eum tacimates erroribus ad. Atqui feugiat euripidis ea pri, sed veniam tacimates ex. Menandri
+        temporibus an duo.
+      </p> -->
+
+      <div class="row stats-row">
+	  
+        <div class="stats-col text-center col-md-3 col-sm-6">
+		
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">232</span> Orders this Month
+          </div>
+        </div>
+		
+        <div class="stats-col text-center col-md-3 col-sm-6">
+		
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">79</span> Expense this Month
+          </div>
+		  
+        </div>  
+		
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">1,463</span> Orders this Year
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">15</span> Expense this Year
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /About -->
+  <!-- Parallax -->
+
+ <!--  <div class="block bg-primary block-pd-lg block-bg-overlay text-center" data-bg-img="img/parallax-bg.jpg" data-settings='{"stellar-background-ratio": 0.6}' data-toggle="parallax-bg">
+    <h2>
+        Welcome to a perfect theme
+      </h2>
+
+    <p>
+      This is the most powerful theme with thousands of options that you have never seen before.
+    </p>
+    <img alt="Bell - A perfect theme" class="gadgets-img hidden-md-down" src="img/gadgets.png">
+  </div> -->
+  <!-- /Parallax -->
+  <!-- Features -->
+<section class="team" id="team">
+    <div class="container">
+      <h2 class="text-center">
+          ORDERS FROM TODAY
+        </h2>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-6">
+          <div class="card card-block">
+            <a href="#"><!-- <img alt="" class="team-img" src="img/team-1.jpg"> -->
+              <div class="card-title-wrap">
+                <span class="card-title">Milk</span> 
+              </div>
+			 <!--  </div>
+			  </div> -->
+			     
+              <!-- <div class="team-over">
+                <h4 class="hidden-md-down">
+                  Connect with me
+                </h4>
+
+                <nav class="social-nav">
+                  <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+            </nav>
+
+            <p>
+              Lorem ipsum dolor sit amet, eu sed suas eruditi honestatis.
+            </p>
+          </div> -->
+          </a>
+        </div>
+      </div>
+<div class="container">
+<div class="row">
+      <div class="col-sm-3 col-xs-6">
+        <div class="card card-block">
+          <a href="#"><!-- <img alt="" class="team-img" src="img/team-2.jpg"> -->
+              <div class="card-title-wrap">
+                <span class="card-title">Salt</span> 
+              </div>
+
+        </a>
+      </div>
+    </div>
+	</div>
+	</div>
+<div class="container">
+<div class="row">
+    <div class="col-sm-3 col-xs-6">
+      <div class="card card-block">
+        <a href="#"><!-- <img alt="" class="team-img" src="img/team-3.jpg"> -->
+              <div class="card-title-wrap">
+                <span class="card-title">Sugar</span> 
+              </div>
+
+             
+      </a>
+    </div>
+    </div> </div>
+    </div>
+	<input id="sdMsg" type="button" value="Order Here!" onclick="callReq();" />
+	
+
+
+  <section class="portfolio" id="portfolio">
+    <div class="container text-center">
+      <h2>
+          CHARTS
+        </h2>
+
+      
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/porf-1.jpg" height="195">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Groceries Check
+                  </h3>
+
+                
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/porf-2.jpg" height="195">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Households Check
+                  </h3>
+
+                
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#"><img alt="" src="img/porf-3.jpg" height="195">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Yearly Expenses
+                  </h3>
+
+                 
+                </div>
+              </div></a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+          <div class="card card-block">
+            <a href="#contact"><img alt="" src="img/porf-4.jpg" height="195">
+              <div class="portfolio-over">
+                <div>
+                  <h3 class="card-title">
+                    Monthly Expenses
+                  </h3>
+
+                 
+                </div>
+              </div></a>
+          </div>
+        </div>
+      </div>
+
+      
+
+        
+
+       
+
+        
+      </div>
+    </div>
+  </section>
+  <!-- /Portfolio -->
+  <!-- Team -->
+
+  
+  <!-- /Team -->
+  <!-- @component: footer -->
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Monthly Expenses</h2>
+        </div>
+      </div>
+	  <div class="row justify-content-center">
+<div id="piechart"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Work', 9],
+  ['Eat', 2],
+  ['TV', 4],
+  ['Gym', 2],
+  ['Sleep', 8]
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+      
+        
+
+        
+
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+
+  <!-- Required JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/tether/js/tether.min.js"></script>
+  <script src="lib/stellar/stellar.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/easing/easing.js"></script>
+  <script src="lib/stickyjs/sticky.js"></script>
+  <script src="lib/parallax/parallax.js"></script>
+  <script src="lib/lockfixed/lockfixed.min.js"></script>
+
+
+</body>
+</html>
