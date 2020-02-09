@@ -24,5 +24,7 @@ void loop()
     Serial.print("temperature = ");
     Serial.println(temperature);
 
+    
+    Serial.flush();
     delay(100);
 }
