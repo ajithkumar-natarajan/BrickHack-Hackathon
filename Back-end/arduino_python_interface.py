@@ -23,7 +23,7 @@ count=0
 while count<4:
     rawdata.append(str(arduino.readline().rstrip()))
     count+=1
-print(rawdata)
+#print(rawdata)
 
 #def clean(L):   #L is a list
 #    newl=[]     #initialising the new list
