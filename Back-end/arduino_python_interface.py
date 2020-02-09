@@ -37,8 +37,8 @@ while count<4:
 
 def write(L):
     data_dict = dict()
-    data_dict['Temperature'] = L[0]
-    data_dict['AirPressure'] = L[1]
+    data_dict['Temperature'] = float(L[0])
+    data_dict['AirPressure'] = float(L[1])
     data_dict['LightReplacement'] = L[2]
     data_dict['Grocery'] = L[3]
     
