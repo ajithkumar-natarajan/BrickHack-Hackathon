@@ -1,0 +1,2 @@
+# BrickHack-Hackathon
+This project involves Internet of Things, Data Visualization and using of Wegmans API. A couple of sensors that monitor things like the quantity of groceries at home and few other things like the working of lights at home are interfaced to Arduino. When any of these are to be replaced, the item is added to the cart in the user's Wegmans account. Statistical visualization of the weekly and monthly purchases are displayed in the front-end.
