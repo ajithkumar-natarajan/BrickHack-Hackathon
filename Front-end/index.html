@@ -91,11 +91,38 @@ function callReq() {
 </head>
 
 <body>
+<script type="text/javascript" src="data.json"></script>
 <script>
+var chkItem = false;
+var chkSugar = false;
+var P = 0;
+//console.log(jsonstr);
 function chkavl(res){
 console.log('insida');
-    console.log(res.isAvailable) 
+    console.log(res.isAvailable);
+	chkItem = res.isAvailable;
+	console.log("chkItem",chkItem);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 function avail(sku,store)
 {
 	var url ='https://api.wegmans.io/products/'+sku+'/availabilities/'+store+'?api-version=2018-10-18&subscription-key=d5e282efface443ebf847c99ad497ca7';
@@ -105,7 +132,7 @@ function avail(sku,store)
                 }
 				
                 fetch(url, options)
-          .then(data => data.json())
+          .then(data1 => data1.json())
           .then(success => chkavl(success));
 	
 	
@@ -116,12 +143,67 @@ function avail(sku,store)
 
 
 
-
+function addedPrice(res)
+{
+console.log("price",res);
+}
 
 function callReq() {
    console.log("jiii");
-  avail("122121","1");
-		  
+   console.log("jsonstr.LightReplacement",jsonstr[0].LightReplacement);
+   if(jsonstr[0].LightReplacement === "Yes")
+		avail("122121","1");
+   //sleep(1000);
+
+    //sleep(1000);
+   console.log("jiii");
+    console.log("jiii");
+	console.log("chkItem",chkItem);
+  if(chkItem || chkItem === "true")
+  {
+   console.log("jiii");
+    console.log("jiii");
+  var output;
+  
+  var url="https://api.wegmans.io/products/122121/prices/1?api-version=2018-10-18&subscription-key=d5e282efface443ebf847c99ad497ca7";
+  console.log(url);
+  const options = {
+          method: 'GET',
+                }
+				
+                fetch(url, options)
+          .then(data1 => data1.json())
+          .then(success => addedPrice(success));//output );
+		  // sleep(1000);
+		    //sleep(1000);
+  }
+  
+   if(jsonstr[0].Grocery ==="Yes")
+		avail("122121","1");
+   //sleep(1000);
+    //sleep(1000);
+  if(chkSugar || chkSugar === "true")
+  {
+  console.log("jiii");
+    console.log("jiii");
+  var output;
+  
+  var url="https://api.wegmans.io/products/122121/prices/1?api-version=2018-10-18&subscription-key=d5e282efface443ebf847c99ad497ca7";
+  console.log(url);
+  const options = {
+          method: 'GET',
+                }
+				
+                fetch(url, options)
+          .then(data1 => data1.json())
+          .then(success => addedPrice(success));//output );
+  }
+	
+  
+  
+	//price = price;
+	
+	 
 }
 
 
@@ -372,6 +454,7 @@ function callReq() {
     </div> </div>
     </div>
 	<input id="sdMsg" type="button" value="Order Here!" onclick="callReq();" />
+	
 	
 
 
